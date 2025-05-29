@@ -1,0 +1,25 @@
+.logo_jc,
+.menu_btn,
+.title_jc{
+    color: #FFE3D9;
+}
+
+
+.title_jc{
+    margin-bottom: 9rem;
+}
+
+.line_header{
+    background-color: #FFE3D9;
+}
+
+.background_video {
+    background-color: black;
+}
+
+.background_video video{
+    opacity: 0.7;
+    
+    
+}
+

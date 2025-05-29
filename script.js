@@ -32,22 +32,70 @@ mobileMenuItems.forEach(item => {
 
 // En tu archivo script.js
 
+// En tu archivo script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ... (tu código para el menú, asegúrate que funcione primero) ...
+    // --- Código del Menú (asegúrate que esté funcionando) ---
+    const menuButton = document.getElementById('menuButton'); // o 'menuBtn' si no lo cambiaste
+    const closeMenuButton = document.getElementById('closeMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    // const mainHeader = document.getElementById('mainHeader'); // Si lo usas para el scroll
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
 
-    const heroText = document.getElementById('heroText');
-
-    if (heroText) {
-        // Forzar un reflujo/repintado (a veces útil para transiciones on-load)
-        void heroText.offsetWidth; 
-
-        // Quita las clases del estado inicial para activar la animación
-        heroText.classList.remove('opacity-0', 'translate-y-5');
-        // Al quitar estas clases, el elemento transicionará a su estado natural:
-        // opacity: 1 (o el valor por defecto de la clase 'text-white')
-        // transform: translateY(0) (su posición original)
-        // Esto sucede gracias a las clases 'transition-all', 'duration-*', 'ease-*', 'delay-*'
+    function openMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+            mobileMenu.classList.add('translate-y-0', 'opacity-100');
+            document.body.classList.add('overflow-hidden');
+        }
     }
 
-    // ... (código para el scroll del header, año en el footer, etc.) ...
+    function closeMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+            mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+            document.body.classList.remove('overflow-hidden');
+        }
+    }
+
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', openMenu);
+    }
+    if (closeMenuButton && mobileMenu) {
+        closeMenuButton.addEventListener('click', closeMenu);
+    }
+    if (mobileMenuItems && mobileMenu) {
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', closeMenu);
+        });
+    }
+    // --- Fin del Código del Menú ---
+
+
+    // --- Código de Animación del Hero ---
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const heroButtons = document.getElementById('heroButtons');
+
+    function animateElement(element) {
+        if (element) {
+            void element.offsetWidth; // Forza reflujo para asegurar que la transición se aplique
+            element.classList.remove('opacity-0', 'translate-y-5');
+        }
+    }
+
+    // Un pequeño retraso general para asegurar que todo esté listo antes de animar
+    // Las clases 'delay-*' en el HTML controlarán el escalonamiento individual
+    setTimeout(() => {
+      animateElement(heroTitle);
+      animateElement(heroSubtitle);
+      animateElement(heroButtons);
+    }, 50); // 50ms es usualmente suficiente
+
+    // --- Otro JS que puedas tener (scroll del header, año, etc.) ---
+    // Ejemplo para el año en el footer (si tienes un footer con id="currentYear")
+    // const currentYearElement = document.getElementById('currentYear');
+    // if (currentYearElement) {
+    //     currentYearElement.textContent = new Date().getFullYear();
+    // }
 });
