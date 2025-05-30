@@ -25,3 +25,31 @@
     
 }
 
+
+@keyframes marquee-scroll {
+    0% { 
+      transform: translateX(0%); 
+    }
+    100% { 
+      transform: translateX(-50%); /* Mueve el contenido por el ancho del grupo original */
+    }
+  }
+  
+  .marquee-content {
+    animation: marquee-scroll 25s linear infinite; /* Ajusta '25s' para cambiar la velocidad */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+.servicios_jc{
+    background-color: #D7CCC8;
+}
