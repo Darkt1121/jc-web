@@ -36,18 +36,8 @@
   }
   
   .marquee-content {
-    animation: marquee-scroll 25s linear infinite; /* Ajusta '25s' para cambiar la velocidad */
+    animation: marquee-scroll 15s linear infinite; /* Ajusta '25s' para cambiar la velocidad */
   }
-
-
-
-
-
-
-
-
-
-
 
 
 .servicios_jc{
