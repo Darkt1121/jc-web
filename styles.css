@@ -1,5 +1,5 @@
 body{
-  background-color: #F4F2ED;
+  background-color: #e8e8e8;
 }
 
 .logo_jc,
@@ -56,3 +56,28 @@ body{
 
 
 
+.line_proyectos{
+    background-color: #e7bdae;
+}
+
+
+
+
+
+@keyframes blink-animation {
+  0%, 100% { /* Estado completamente visible */
+    opacity: 1;
+  }
+  50% { /* A la mitad de la animación, se vuelve más transparente */
+    opacity: 0.3; /* Puedes ajustar este valor para que parpadee más o menos intenso */
+  }
+}
+
+.animate-blink {
+  animation: blink-animation 1.8s infinite ease-in-out;
+  /* 1.8s: Duración de un ciclo completo de parpadeo. Ajústalo para cambiar la velocidad.
+            Un número más pequeño = parpadeo más rápido.
+     infinite: Para que la animación se repita sin parar.
+     ease-in-out: Suaviza el cambio de opacidad.
+  */
+}
