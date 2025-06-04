@@ -99,3 +99,104 @@ document.addEventListener('DOMContentLoaded', function() {
     //     currentYearElement.textContent = new Date().getFullYear();
     // }
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (tu código existente para el menú, hero, etc.) ...
+
+    const carousel = document.getElementById('imageCarousel');
+
+    if (carousel) {
+        let isDown = false;    // Indica si el botón del mouse está presionado
+        let startX;            // Posición X inicial del mouse al hacer clic
+        let scrollLeft;        // Posición de scroll inicial del carrusel
+
+        // Cambiar el cursor a "agarrando" cuando se presiona el mouse
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.classList.add('cursor-grabbing'); // Cambia el cursor
+            carousel.classList.remove('cursor-grab');
+            startX = e.pageX - carousel.offsetLeft; // Posición X del mouse relativa al carrusel
+            scrollLeft = carousel.scrollLeft;       // Scroll actual del carrusel
+        });
+
+        // Dejar de arrastrar y restaurar el cursor
+        const stopDragging = () => {
+            if (!isDown) return;
+            isDown = false;
+            carousel.classList.remove('cursor-grabbing');
+            carousel.classList.add('cursor-grab');
+        };
+
+        carousel.addEventListener('mouseleave', stopDragging); // Si el mouse sale del carrusel
+        carousel.addEventListener('mouseup', stopDragging);    // Si se suelta el botón del mouse
+
+        // Mover el carrusel al mover el mouse
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return; // Solo mover si el botón está presionado
+            e.preventDefault(); // Evita acciones por defecto como seleccionar texto
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // Multiplicador para la velocidad de arrastre (ajusta *2 si quieres)
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // ... (otro código JS que puedas tener) ...
+});
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaSection = document.getElementById('ctaSection'); // El observador vigilará esta sección
+    const ctaTitle = document.getElementById('ctaTitle');
+    const ctaSubtitle = document.getElementById('ctaSubtitle');
+    const ctaButton = document.getElementById('ctaButton');
+
+    // Elementos a animar individualmente
+    const elementsToAnimate = [ctaTitle, ctaSubtitle, ctaButton];
+
+    // Configuración del Intersection Observer
+    const observerOptions = {
+        root: null, // Observa intersecciones con el viewport
+        rootMargin: '0px',
+        threshold: 0.2 // Se activa cuando al menos el 20% del elemento está visible
+                       // Puedes ajustar este valor (0.1 para 10%, 0.5 para 50%, etc.)
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // El elemento (o la sección) está visible
+                elementsToAnimate.forEach(el => {
+                    if (el) {
+                        // Quita las clases que ocultan y desplazan para iniciar la transición CSS
+                        // Las clases de delay en el HTML se encargarán del escalonamiento
+                        el.classList.remove('opacity-0', 'translate-y-5');
+                    }
+                });
+                observer.unobserve(entry.target); // Deja de observar una vez que la animación se ha disparado
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    if (ctaSection) {
+        observer.observe(ctaSection); // Empezar a observar la sección CTA
+    }
+});

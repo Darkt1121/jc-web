@@ -15,7 +15,8 @@ body{
     margin-bottom: 9rem;
 }
 
-.line_header{
+.line_header,
+.quienes_somos{
     background-color: #FFE3D9;
 }
 
@@ -80,4 +81,27 @@ body{
      infinite: Para que la animación se repita sin parar.
      ease-in-out: Suaviza el cambio de opacidad.
   */
+}
+
+
+
+
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+
+
+
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px); /* Mismo valor que translate-y-5 de Tailwind */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
