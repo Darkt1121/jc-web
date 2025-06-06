@@ -9,51 +9,63 @@
 </head>
 <body>
       <!-- Header -->
-      <header class="fixed top-0 left-0 right-0 z-50 p-4">
-        <nav class="flex justify-between items-center ">
-            <a href="#" class="text-4xl font-bold text-primary logo_jc">J. C.</a>
-            <button id="menuButton" class="text-primary text-xl menu_btn">
+      <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 p-4  bg-opacity-25 md:bg-opacity-40 transition-colors duration-300">
+        <!-- Contenedor para centrar el contenido del header -->
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-4xl font-black logo_jc">J.C.</a> <!-- Usando font-black para más peso -->
+
+            <!-- Navegación de Escritorio (Visible desde 'md' hacia arriba) -->
+            <nav class="hidden md:flex space-x-5 lg:space-x-7 items-center">
+                <a href="#servicios" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">servicios</a>
+                <a href="#quienes-somos" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">Quiénes Somos</a>
+                <a href="#contacto" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">Contactos</a>
+                <a href="#proyectos" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">proyectos</a>
+            </nav>
+
+            <!-- Botón del Menú Móvil (Oculto desde 'md' hacia arriba) -->
+            <button id="menuButton" class="md:hidden text-xl menu_btn">
                 Menu
             </button>
-        </nav>
-        <div class="h-px line_header mt-2"></div>
+        </div>
+        <!-- El div.line_header se ha eliminado ya que el diseño de escritorio no lo muestra -->
     </header>
 
-    <!-- Menú overlay -->
+    <!-- Menú overlay Móvil (Tu código existente) -->
     <div id="mobileMenu"
-     class="fixed inset-0 bg-emerald-800 text-stone-100 z-60 p-6 flex flex-col
-            transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out md:hidden"
-     style="font-family: 'Lora', serif;"> <div class="flex justify-end items-center mb-8">
-        <button id="closeMenuButton" class="focus:outline-none relative py-1">
-            <span class="text-lg">Cerrar</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-teal-400 transform scale-x-75"></span>
-        </button>
+         class="fixed inset-0 bg-emerald-800 text-stone-100 z-[60] p-6 flex flex-col
+                transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out md:hidden"
+         style="font-family: 'Lora', serif;">
+        <div class="flex justify-end items-center mb-8">
+            <button id="closeMenuButton" class="focus:outline-none relative py-1">
+                <span class="text-lg">Cerrar</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-teal-400 transform scale-x-75"></span>
+            </button>
+        </div>
+        <nav class="flex flex-col flex-grow justify-center">
+            <a href="#inicio" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Inicio</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#sobre-nosotros" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Sobre Nosotros</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#servicios" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Servicios</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#proyectos" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Proyectos</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#contacto" class="mobile-menu-item group flex justify-between items-center py-5 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Contacto</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+        </nav>
+        <div class="py-4"></div>
     </div>
-
-    <!-- Menú mobile -->
-    <nav class="flex flex-col flex-grow justify-center">
-        <a href="#inicio" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Inicio</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#sobre-nosotros" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Sobre Nosotros</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#servicios" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Servicios</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#proyectos" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Proyectos</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#contacto" class="mobile-menu-item group flex justify-between items-center py-5 hover:bg-emerald-700 px-3 transition-colors text-xl"> <span>Contacto</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-    </nav>
-    <div class="py-4"></div>
-</div>
 
 
 
@@ -73,7 +85,7 @@
 
         <section id="inicio" class="relative h-screen">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                <source src="/videos/background - jc.mp4" type="video/mp4">
+                <source src="videos/background_web.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-black opacity-50"></div>
     
