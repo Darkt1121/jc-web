@@ -200,3 +200,50 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(ctaSection); // Empezar a observar la sección CTA
     }
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Usamos matchMedia para crear animaciones responsivas
+    ScrollTrigger.matchMedia({
+        
+        // === ANIMACIÓN PARA DESKTOP (pantallas de 1024px o más) ===
+        "(min-width: 1024px)": function() {
+            const textSteps = gsap.utils.toArray(".text-step");
+            const visualItems = gsap.utils.toArray(".visual-item");
+            const textContents = gsap.utils.toArray(".text-content");
+
+            gsap.set(visualItems.slice(1), { autoAlpha: 0 });
+            gsap.set(textContents.slice(1), { autoAlpha: 0.3 });
+
+            textSteps.forEach((step, index) => {
+                ScrollTrigger.create({
+                    trigger: step,
+                    start: "top center",
+                    end: "bottom center",
+                    onToggle: self => {
+                        if (self.isActive) {
+                            gsap.to(visualItems, { autoAlpha: 0, duration: 0.3 });
+                            gsap.to(visualItems[index], { autoAlpha: 1, duration: 0.3, delay: 0.1 });
+                            gsap.to(textContents, { autoAlpha: 0.3, duration: 0.3 });
+                            gsap.to(textContents[index], { autoAlpha: 1, duration: 0.3, delay: 0.1 });
+                        }
+                    }
+                });
+            });
+        },
+
+        // === ANIMACIÓN PARA MÓVIL (pantallas de menos de 1024px) ===
+        "(max-width: 1023px)": function() {
+            // No se necesita JS para el carrusel móvil, 
+            // ya que es un scroll nativo del navegador.
+            // Dejamos esto vacío intencionalmente.
+        }
+    });
+});

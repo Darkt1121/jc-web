@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
@@ -237,230 +240,212 @@
 
         
 
-        <section class="p-14  ">
-            <h1 class="text-3xl font-bold text-center mb-10">Conoce mas sobre Nuestros Proyectos</h1>
-
-            <div class="rounded-lg">
-                <h5 class="text-2xl">Remodelacion</h5>
-                <img class="rounded-xl" src="img/trabajo3.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">San bernardo</span> 
-                </div>
-
-
-
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
-                </div>
-            </div>
-            <div class="h-px line_proyectos mt-2"></div>
+        <section class="p-8 md:p-14">
+            <h1 class="text-3xl font-bold text-center mb-12">Conoce mas sobre Nuestros Proyectos</h1>
         
-            
-
-
-
-            <div class="rounded-lg my-20">
-                <h5 class="text-2xl">Quincho</h5>
-                <img class="rounded-xl" src="img/remodelacion-20.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">Colina</span> 
-                </div>
-
-
-
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
-                </div>
-            </div>
-            <div class="h-px line_proyectos mt-2"></div>
-
-
-            
-            <div class="flex justify-center items-center min-h-dvh p-4 sm:p-6 md:p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
         
-                <video src="/videos/Video JC 2.mp4"  
-                       autoplay
-                       muted
-                       loop
-                       playsinline
-                       class="
-                         h-[60vh] sm:h-[65vh] md:h-[70vh] 
-                         w-auto                            
-                         rounded-3xl                     
-                         shadow-2xl                         
-                         object-cover                       
-                       ">
-                    
-                </video>
+                <div class="rounded-lg lg:col-start-1 lg:row-start-1">
+                    <h5 class="text-2xl mb-2">Remodelacion</h5>
+                    <img class="rounded-xl" src="img/trabajo3.jpg" alt="Piscina San Bernardo">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-1 lg:row-start-2">
+                    <h5 class="text-2xl mb-2">Quincho</h5>
+                    <img class="rounded-xl" src="img/remodelacion-20.jpg" alt="Quincho Colina">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">Colina</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Estructura en Metalcon</p>
+                        </div>
+                         <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Aislación térmica</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Instalaciones eléctricas</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Terminaciones completas</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flex items-center rounded-3xl lg:col-start-2 lg:row-start-1 lg:row-span-2">
+                    <video src="/videos/Video JC 2.mp4" autoplay muted loop playsinline class="w-full h-full object-cover rounded-3xl shadow-2xl">
+                    </video>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-3 lg:row-start-1">
+                    <h5 class="text-2xl mb-2">Remodelacion</h5>
+                    <img class="rounded-xl" src="img/trabajo3.jpg" alt="Piscina nocturna">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                         <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-3 lg:row-start-2">
+                    <h5 class="text-2xl mb-2">Piscina</h5>
+                    <img class="rounded-xl" src="img/pisicina-21.jpg" alt="Piscina con vista">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
         
             </div>
-
-
-
-            <div class="rounded-lg">
-                <h5 class="text-2xl">Remodelacion</h5>
-                <img class="rounded-xl" src="img/trabajo3.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">San bernardo</span> 
-                </div>
-
-
-
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
-                </div>
-            </div>
-
-
-
-
-            <div class="rounded-lg">
-                <h5 class="text-2xl">piscina</h5>
-                <img class="rounded-xl" src="img/pisicina-21.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">San bernardo</span> 
-                </div>
-
-
-
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
-                </div>
-            </div>
-
-            
         </section>
 
 
 
 
+      
+    
+   
 
-        <section class="py-12 bg-stone-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
-                    Proyectos más recientes
-                </h2>
-                <div id="imageCarousel" class="flex overflow-x-auto whitespace-nowrap pb-4 hide-scrollbar
-                                             scroll-snap-type-x-mandatory space-x-4 sm:space-x-6 cursor-grab">
-                    <!-- Proyecto 1 -->
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/trabajo6.jpg"
-                             alt="Descripción del Proyecto Reciente 1"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-                    <!-- Proyecto 2 -->
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/pisicina-20.png"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-                    <!-- Más proyectos... -->
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/remodelacion-21.jpg"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-
-
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/remodelacion-21.jpg"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-
-
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/remodelacion-21.jpg"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-
-
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/remodelacion-21.jpg"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-
-
-                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
-                        <img src="img/remodelacion-21.jpg"
-                             alt="Descripción del Proyecto Reciente 2"
-                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
-                    </div>
-
-
+    <!-- SECCIÓN PRINCIPAL DE PROYECTOS -->
+    <section id="projects-section" class="relative py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8">
+                Proyectos más recientes
+            </h2>
+            
+            <!-- ====== VERSIÓN MÓVIL: CARRUSEL HORIZONTAL ====== -->
+            <!-- Visible solo en pantallas pequeñas (hasta lg), oculto en grandes -->
+            <div id="imageCarousel" class="lg:hidden flex overflow-x-auto whitespace-nowrap pb-4 hide-scrollbar
+                                          space-x-4 sm:space-x-6 cursor-grab">
+                <!-- Proyecto 1 -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-96">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop"
+                         alt="Planos y herramientas de planificación de un proyecto"
+                         class="w-full h-96 object-cover rounded-xl shadow-lg">
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-96">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f804?q=80&w=2895&auto=format&fit=crop"
+                         alt="Estructura de una casa en construcción"
+                         class="w-full h-96 object-cover rounded-xl shadow-lg">
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-96">
+                    <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2940&auto=format&fit=crop"
+                         alt="Interior de una sala de estar moderna y bien decorada"
+                         class="w-full h-96 object-cover rounded-xl shadow-lg">
+                </div>
+                <!-- Proyecto 4 -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-96">
+                    <img src="https://images.unsplash.com/photo-1562790351-34fab545b7e8?q=80&w=2833&auto=format&fit=crop"
+                         alt="Piscina de lujo en el patio de una casa moderna"
+                         class="w-full h-96 object-cover rounded-xl shadow-lg">
                 </div>
             </div>
-        </section>
+
+            <!-- ====== VERSIÓN DESKTOP: SCROLLYTELLING ====== -->
+            <!-- Oculto en pantallas pequeñas, visible como grid en grandes (lg) en adelante -->
+            <div id="scrolly-container" class="hidden lg:grid lg:grid-cols-2 gap-16">
+                <!-- Columna Izquierda (Pegajosa) - Contenedor de las Imágenes -->
+                <div class="sticky top-0 h-screen flex items-center justify-center">
+                    <div id="visual-container" class="relative w-full aspect-square max-w-lg rounded-2xl bg-white shadow-2xl p-4">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop" alt="Planos" class="visual-item absolute inset-4 w-auto h-auto object-contain rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f804?q=80&w=2895&auto=format&fit=crop" alt="Construcción" class="visual-item absolute inset-4 w-auto h-auto object-contain rounded-lg opacity-0">
+                        <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=2940&auto=format&fit=crop" alt="Acabados" class="visual-item absolute inset-4 w-auto h-auto object-contain rounded-lg opacity-0">
+                        <img src="https://images.unsplash.com/photo-1562790351-34fab545b7e8?q=80&w=2833&auto=format&fit=crop" alt="Finalizado" class="visual-item absolute inset-4 w-auto h-auto object-contain rounded-lg opacity-0">
+                    </div>
+                </div>
+
+                <!-- Columna Derecha (Scrollable) - Contenedor de los Textos -->
+                <div>
+                    <div class="text-step flex items-center"><div class="text-content">
+                        <h3 class="text-3xl font-bold">1. Diseño Inicial y Planificación</h3>
+                        <p class="mt-4 text-lg text-gray-600">Comenzamos cada proyecto entendiendo tus necesidades. La planificación detallada es la clave para un resultado exitoso.</p>
+                    </div></div>
+                    <div class="text-step flex items-center"><div class="text-content">
+                        <h3 class="text-3xl font-bold">2. Construcción y Estructura</h3>
+                        <p class="mt-4 text-lg text-gray-600">Utilizamos materiales de la más alta calidad y las mejores técnicas para garantizar una estructura sólida y duradera.</p>
+                    </div></div>
+                    <div class="text-step flex items-center"><div class="text-content">
+                        <h3 class="text-3xl font-bold">3. Acabados y Detalles</h3>
+                        <p class="mt-4 text-lg text-gray-600">La magia está en los detalles. Seleccionamos cuidadosamente los acabados para crear un ambiente que refleje tu estilo.</p>
+                    </div></div>
+                    <div class="text-step flex items-center"><div class="text-content">
+                        <h3 class="text-3xl font-bold">4. Entrega y Satisfacción Final</h3>
+                        <p class="mt-4 text-lg text-gray-600">Hacemos una revisión final contigo para asegurar que todo esté perfecto y entregamos un proyecto del que te sentirás orgulloso.</p>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
         
        
     

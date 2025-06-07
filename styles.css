@@ -117,3 +117,20 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+
+body {
+  overflow-x: clip;
+}
+/* Damos a cada paso de texto una altura mínima para asegurar que haya espacio para scrollear en desktop */
+.text-step {
+  min-height: 80vh;
+}
+/* Oculta la barra de scroll del carrusel en móvil */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
