@@ -1,3 +1,7 @@
+body{
+    background-color: #EFF2F8;
+}
+
 
 
 .logo_jc,
@@ -27,8 +31,7 @@
 
 
 
-.line_header,
-.quienes_somos{
+.line_header{
     background-color: #efd8ce36;
 }
 
@@ -57,9 +60,9 @@
   }
 
 
-.servicios_jc{
+/* .servicios_jc{
     background-color: #D7CCC8;
-}
+} */
 
 
 .piscina_jc{
@@ -108,29 +111,3 @@
 
 
 
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px); /* Mismo valor que translate-y-5 de Tailwind */
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-body {
-  overflow-x: clip;
-}
-/* Damos a cada paso de texto una altura mínima para asegurar que haya espacio para scrollear en desktop */
-.text-step {
-  min-height: 80vh;
-}
-/* Oculta la barra de scroll del carrusel en móvil */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
