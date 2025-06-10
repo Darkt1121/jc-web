@@ -5,55 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
       <!-- Header -->
-      <header class="fixed top-0 left-0 right-0 z-50 p-4">
-        <nav class="flex justify-between items-center ">
-            <a href="#" class="text-4xl font-bold text-primary logo_jc">J. C.</a>
-            <button id="menuButton" class="text-primary text-xl menu_btn">
+      <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 p-4  bg-opacity-25 md:bg-opacity-40 transition-colors duration-300">
+        <!-- Contenedor para centrar el contenido del header -->
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-4xl font-black logo_jc">J.C.</a> <!-- Usando font-black para más peso -->
+
+            <!-- Navegación de Escritorio (Visible desde 'md' hacia arriba) -->
+            <nav class="hidden md:flex space-x-5 lg:space-x-7 items-center">
+                <a href="#servicios" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">servicios</a>
+                <a href="#quienes-somos" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">Quiénes Somos</a>
+                <a href="#contacto" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">Contactos</a>
+                <a href="#proyectos" class="text-sm lg:text-base text-white hover:text-gray-300 transition-colors">proyectos</a>
+            </nav>
+
+            <!-- Botón del Menú Móvil (Oculto desde 'md' hacia arriba) -->
+            <button id="menuButton" class="md:hidden text-xl menu_btn">
                 Menu
             </button>
-        </nav>
-        <div class="h-px line_header mt-2"></div>
+        </div>
+        <!-- El div.line_header se ha eliminado ya que el diseño de escritorio no lo muestra -->
     </header>
 
-    <!-- Menú overlay -->
+    <!-- Menú overlay Móvil (Tu código existente) -->
     <div id="mobileMenu"
-     class="fixed inset-0 bg-emerald-800 text-stone-100 z-60 p-6 flex flex-col
-            transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out md:hidden"
-     style="font-family: 'Lora', serif;"> <div class="flex justify-end items-center mb-8">
-        <button id="closeMenuButton" class="focus:outline-none relative py-1">
-            <span class="text-lg">Cerrar</span>
-            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-teal-400 transform scale-x-75"></span>
-        </button>
+         class="fixed inset-0 bg-emerald-800 text-stone-100 z-[60] p-6 flex flex-col
+                transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out md:hidden"
+         style="font-family: 'Lora', serif;">
+        <div class="flex justify-end items-center mb-8">
+            <button id="closeMenuButton" class="focus:outline-none relative py-1">
+                <span class="text-lg">Cerrar</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-teal-400 transform scale-x-75"></span>
+            </button>
+        </div>
+        <nav class="flex flex-col flex-grow justify-center">
+            <a href="#inicio" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Inicio</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#sobre-nosotros" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Sobre Nosotros</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#servicios" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Servicios</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#proyectos" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Proyectos</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#contacto" class="mobile-menu-item group flex justify-between items-center py-5 hover:bg-emerald-700 px-3 transition-colors text-xl">
+                <span>Contacto</span>
+                <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+        </nav>
+        <div class="py-4"></div>
     </div>
-
-    <!-- Menú mobile -->
-    <nav class="flex flex-col flex-grow justify-center">
-        <a href="#inicio" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Inicio</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#sobre-nosotros" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Sobre Nosotros</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#servicios" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Servicios</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#proyectos" class="mobile-menu-item group flex justify-between items-center py-5 border-b border-emerald-700 hover:bg-emerald-700 px-3 transition-colors text-xl">
-            <span>Proyectos</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-        <a href="#contacto" class="mobile-menu-item group flex justify-between items-center py-5 hover:bg-emerald-700 px-3 transition-colors text-xl"> <span>Contacto</span>
-            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-    </nav>
-    <div class="py-4"></div>
-</div>
 
 
 
@@ -73,7 +88,7 @@
 
         <section id="inicio" class="relative h-screen">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                <source src="/videos/background - jc.mp4" type="video/mp4">
+                <source src="videos/background_web.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-black opacity-50"></div>
     
@@ -138,192 +153,378 @@
 
 
         <!-- Servicios -->
-        
-        <section class="servicios_jc my-32">
-
-                <div class="">
-                        <img src="img/remodelacion-20.jpg" alt="">
-                        <div class="m-14">
-                            <h5 class="text-3xl">Quinchos</h5>
-                            <p>Diseño y construcción de piscinas personalizadas. Soluciones duraderas y 
-                                estéticas para que disfrutes del verano como nunca antes en tu propio hogar.</p>
-                        </div>
-                        <div class="m-14">
-                                        <a href="https://wa.me/5491133333333" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            class="inline-flex items-center space-x-2 rounded-full border border-gray-800 px-6 py-2 
-                                            text-gray-800 font-semibold hover:bg-gray-800 hover:text-white 
-                                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
-                                            transition-colors duration-200">
-                                        
-                                            <span>Ir a WhatsApp</span>
-                                            
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </a>
-                        </div>
-                </div>
-
-                <div class="">
-                        <img src="img/piscina 1.jpg" alt="">
-                        <div class="m-14">
-                        <h2 class="text-3xl">Piscinas</h2>
-                        <p>Diseño y construcción de piscinas personalizadas. 
-                            Soluciones duraderas y estéticas para que disfrutes 
-                            del verano como nunca antes en tu propio hogar..</p>
-                        </div>
-                        <div class="m-14">
-                                    <a href="https://wa.me/5491133333333" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            class="inline-flex items-center space-x-2 rounded-full border border-gray-800 px-6 py-2 
-                                            text-gray-800 font-semibold hover:bg-gray-800 hover:text-white 
-                                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
-                                            transition-colors duration-200">
-                                        
-                                            <span>Ir a WhatsApp</span>
-                                            
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </a>
-                        </div>
-                </div>
-
-
-
-                <div class="">
-                    <img src="img/piso.jpg" alt="">
-                    <div class="m-14">
-                    <h2 class="text-3xl">Pisos</h2>
-                    <p>Pisos que resisten el paso del tiempo. Ofrecemos soluciones 
-                        de pavimentación interior y exterior, garantizando acabados 
-                        perfectos y máxima durabilidad</p>
+        <section class="servicios_jc py-16 lg:py-24">
+            <div class="container mx-auto px-4">
+                
+                <!-- Contenedor GRID principal -->
+                <!-- En móvil (por defecto), es una sola columna -->
+                <!-- En desktop (lg), son dos columnas con un espacio de 12 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center">
+                    
+                    <!-- === Columna Izquierda: Imagen (Diseño Limpio) === -->
+                    <!-- En móvil (order-first) aparece primero. -->
+                    <div class="order-first flex items-center justify-center">
+                        <img src="img/pisicina-20.png" alt="Piscina de lujo con vista al atardecer" class="rounded-2xl shadow-2xl w-full max-w-lg">
                     </div>
-                    <div class="m-14">
-                                <a href="https://wa.me/5491133333333" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        class="inline-flex items-center space-x-2 rounded-full border border-gray-800 px-6 py-2 
-                                        text-gray-800 font-semibold hover:bg-gray-800 hover:text-white 
-                                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
-                                        transition-colors duration-200">
-                                    
-                                        <span>Ir a WhatsApp</span>
-                                        
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                    </a>
+    
+                    <!-- === Columna Derecha: Panel de Texto (Diseño Corregido) === -->
+                    <!-- En móvil, el fondo y padding se eliminan para una vista limpia -->
+                    <div class="order-last lg:bg-white lg:p-12 lg:rounded-2xl lg:shadow-lg">
+                        <div class="flex flex-col space-y-6 text-center lg:text-left ">
+                            
+                            <h2 class="text-4xl font-bold text-gray-900">Piscinas</h2>
+                            
+                            <!-- Sub-sección de Diseño -->
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Diseño</h3>
+                                <p class="mt-2 text-gray-600 leading-relaxed">
+                                    Diseño y construcción de piscinas personalizadas. Soluciones duraderas y estéticas para que disfrutes del verano como nunca antes en tu propio hogar.
+                                </p>
+                            </div>
+    
+                            <!-- Separador horizontal, visible solo en desktop -->
+                            <hr class="hidden lg:block border-gray-200">
+    
+                            <!-- Sub-sección de Materiales -->
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Materiales</h3>
+                                <p class="mt-2 text-gray-600 leading-relaxed">
+                                    Trabajamos con los mejores materiales del mercado para garantizar la máxima durabilidad y un acabado perfecto que resista el paso del tiempo.
+                                </p>
+                            </div>
+    
+                            <!-- Botón de WhatsApp -->
+                            <div class="pt-4">
+                                 <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center space-x-3 rounded-full border-2 border-gray-800 px-8 py-3 
+                                           text-gray-800 font-bold hover:bg-gray-800 hover:text-white 
+                                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
+                                           transition-all duration-300 group">
+                                    <span>Ir a WhatsApp</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+    
+                </div>
             </div>
+        </section>
+    
+
+      
 
 
+
+
+
+
+
+        
+       
+
+        
+
+        <section class="p-8 md:p-14">
+            <h1 class="text-3xl font-bold text-center mb-12">Conoce mas sobre Nuestros Proyectos</h1>
+        
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+        
+                <div class="rounded-lg lg:col-start-1 lg:row-start-1">
+                    <h5 class="text-2xl mb-2">Remodelacion</h5>
+                    <img class="rounded-xl" src="img/trabajo3.jpg" alt="Piscina San Bernardo">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-1 lg:row-start-2">
+                    <h5 class="text-2xl mb-2">Quincho</h5>
+                    <img class="rounded-xl" src="img/remodelacion-20.jpg" alt="Quincho Colina">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">Colina</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Estructura en Metalcon</p>
+                        </div>
+                         <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Aislación térmica</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Instalaciones eléctricas</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Terminaciones completas</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="flex items-center rounded-3xl lg:col-start-2 lg:row-start-1 lg:row-span-2">
+                    <video src="/videos/Video JC 2.mp4" autoplay muted loop playsinline class="w-full h-full object-cover rounded-3xl shadow-2xl">
+                    </video>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-3 lg:row-start-1">
+                    <h5 class="text-2xl mb-2">Remodelacion</h5>
+                    <img class="rounded-xl" src="img/trabajo3.jpg" alt="Piscina nocturna">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                         <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="rounded-lg lg:col-start-3 lg:row-start-2">
+                    <h5 class="text-2xl mb-2">Piscina</h5>
+                    <img class="rounded-xl" src="img/pisicina-21.jpg" alt="Piscina con vista">
+                    <div class="flex items-center my-5">
+                        <img src="/img/map-pin.svg" alt="Ícono de ubicación" class="w-5 h-5 mr-2">
+                        <span class="text-lg text-gray-800">San bernardo</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Piscina de hormigón</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Borde infinito</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Sistema de climatización</p>
+                        </div>
+                        <div class="flex items-center">
+                            <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
+                            <p>Luces led</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
         </section>
 
-        
-
-        <section class="p-14  ">
-            <h1 class="text-3xl font-bold text-center mb-10">Conoce mas sobre Nuestros Proyectos</h1>
-
-            <div class="rounded-lg">
-                <h5 class="text-2xl">Remodelacion</h5>
-                <img class="rounded-xl" src="img/trabajo3.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">San bernardo</span> 
-                </div>
 
 
 
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
-                </div>
-            </div>
-            <div class="h-px line_proyectos mt-2"></div>
-        
-            
+      
+    
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                    Proyectos más recientes
+                </h2>
+                <div id="imageCarousel" class="flex overflow-x-auto whitespace-nowrap pb-4 hide-scrollbar
+                                             scroll-snap-type-x-mandatory space-x-4 sm:space-x-6 cursor-grab">
+                    <!-- Proyecto 1 -->
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/trabajo6.jpg"
+                             alt="Descripción del Proyecto Reciente 1"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/pisicina-20.png"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
+                    <!-- Más proyectos... -->
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/remodelacion-21.jpg"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
 
 
-
-            <div class="rounded-lg my-20">
-                <h5 class="text-2xl">Quincho</h5>
-                <img class="rounded-xl" src="img/remodelacion-20.jpg" alt="">
-                <div class="flex items-center my-5">
-                    <img src="/img/map-pin.svg" alt="Ícono de ubicación" 
-                         class="w-5 h-5 mr-2"> 
-                         <span class="text-lg text-gray-800">Colina</span> 
-                </div>
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/remodelacion-21.jpg"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
 
 
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/remodelacion-21.jpg"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
 
-           
-            <div class="grid grid-cols-2 my-10"> 
-                <div class="flex items-center">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Piscina de hormigón</p>
-                </div>
-                <div class="flex items-center ">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Borde infinito</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Sistema de climatización</p>
-                </div>
-                <div class="flex items-center my-3">
-                    <img src="img/armrecording.svg" alt="Característica" class="w-5 h-5 mr-2 animate-blink">
-                    <p>Luces led</p>
+
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/remodelacion-21.jpg"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
+
+
+                    <div class="flex-shrink-0 w-[85vw] sm:w-96 scroll-snap-align-center">
+                        <img src="img/remodelacion-21.jpg"
+                             alt="Descripción del Proyecto Reciente 2"
+                             class="w-full h-96 object-cover rounded-xl shadow-lg select-none pointer-events-none">
+                    </div>
+
+
                 </div>
             </div>
-            <div class="h-px line_proyectos mt-2"></div>
-
-            <div class="flex justify-center items-center h-dvh">
-                <video src="/videos/Video JC 2.mp4" autoplay muted loop playsinline class=""></video>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
         </section>
 
+    
 
 
 
 
 
 
+        
+       
+    
+    
+        <section id="quienes-somos" class="quienes_somos py-16 md:py-24 m-5 rounded-lg">
+            <div class="container mx-auto px-4 md:px-6 max-w-3xl"> <!-- Contenedor principal, centrado y con ancho máximo -->
+        
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-800 text-center mb-12 md:mb-16">
+                    Quiénes Somos
+                </h2>
+        
+                <!-- Primer Bloque: Texto + Imagen -->
+                <div class="mb-12 md:mb-16">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify sm:text-left">
+                        En JC Construcciones, creemos que cada proyecto es único y merece una dedicación
+                        total. Nuestro equipo está formado por personas apasionas por su oficio, enfocados en entregar
+                        soluciones eficientes y a la medida. Trabajamos con materiales de primera línea y aplicamos
+                        rigurosos controles de calidad en cada etapa, desde la planificación hasta los acabados
+                        finales.
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="img/piso.jpg" 
+                             alt="Equipo de JC Construcciones planificando un proyecto" 
+                             class="w-full h-auto object-cover">
+                             <!-- Reemplaza con la ruta a tu imagen: ej. /img/equipo-planificando.jpg -->
+                    </div>
+                </div>
+        
+                <!-- Segundo Bloque: Texto + Imagen -->
+                <div>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify sm:text-left">
+                        Nuestra misión es superar las expectativas de nuestros clientes, garantizando transparencia,
+                        comunicación fluida y el cumplimiento de los plazos acordados, para seguir construyendo
+                        juntos un futuro sólido y confiable.
+                    </p>
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="img/pisicina-20.png" 
+                             alt="Casco de seguridad naranja en una obra de JC Construcciones" 
+                             class="w-full h-auto object-cover">
+                             <!-- Reemplaza con la ruta a tu imagen: ej. /img/casco-obra.jpg -->
+                    </div>
+                </div>
+        
+            </div>
+        </section>   
+   
+
+
+
+        <section id="ctaSection" class="relative w-full h-[70vh] sm:h-[80vh] md:h-screen overflow-hidden my-20">
+
+            <!-- Video de Fondo -->
+            <video src="/videos/fondo-piscina.mp4" 
+                   autoplay
+                   muted
+                   loop
+                   playsinline
+                   class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        
+            <!-- Overlay Oscuro -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+        
+            <!-- Contenido Superpuesto -->
+            <div class="relative z-20 flex flex-col items-center justify-center text-center h-full p-6 sm:p-8 text-white">
+                
+                <h2 id="ctaTitle" 
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 
+                           opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-300">
+                    Conversemos sobre tu Proyecto
+                </h2>
+                
+                <p id="ctaSubtitle" 
+                   class="text-base sm:text-lg md:text-xl max-w-xl lg:max-w-2xl mb-8
+                          opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-500">
+                    Estamos aquí para escucharte. Envíanos un mensaje por WhatsApp y comencemos a darle forma a tu proyecto.
+                </p>
+                
+                <a id="ctaButton" 
+                   href="https://wa.me/TU_NUMERO_AQUI" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center space-x-2 rounded-full border-2 border-white px-8 py-3 
+                          text-white text-lg font-semibold hover:bg-white hover:text-gray-800 
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white
+                          transition-colors duration-300
+                          opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-700">
+                    <span>Ir a WhatsApp</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
+        
+        </section>
     </main>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">JC Construcciones</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
