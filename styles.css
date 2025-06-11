@@ -46,6 +46,12 @@ body{
 }
 
 
+.background_trabajo{
+    background-color: #869ec1;
+    right: 5px;
+}
+
+
 @keyframes marquee-scroll {
     0% { 
       transform: translateX(0%); 
