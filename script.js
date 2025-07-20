@@ -102,14 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // ... (tu código existente para el menú, hero, etc.) ...
 
@@ -152,12 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ... (otro código JS que puedas tener) ...
 });
-
-
-
-
-
-
 
 
 
