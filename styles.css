@@ -7,7 +7,6 @@ body{
 
 
 
-.logo_jc,
 .menu_btn,
 .title_jc,
 .btn-proyectos,
@@ -22,8 +21,8 @@ body{
 
 .logo_jc {
   /* Si tienes estilos específicos para logo_jc en styles.css, considera integrarlos con Tailwind */
-  /* Por ejemplo, si 'text-primary' es tu color de marca para el logo */
-  color: #D4AF37; /* Ejemplo de color dorado como 'primary', ajústalo */
+  /* Por ejemplo, si 'text-primary' es tu color de marca para el logo 
+   /* Ejemplo de color dorado como 'primary', ajústalo */
 }
 .menu_btn {
   /* Si tienes estilos específicos para menu_btn en styles.css */
