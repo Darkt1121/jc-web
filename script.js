@@ -127,20 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // ... (tu código existente para el menú, hero, etc.) ...
 

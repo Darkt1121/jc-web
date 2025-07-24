@@ -49,7 +49,7 @@ body{
 
 
 .marquee-content {
-  animation: marquee-scroll 20s linear infinite;
+  animation: marquee-scroll 15s linear infinite;
 }
 
 @keyframes marquee-scroll {
