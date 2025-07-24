@@ -102,6 +102,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('.marquee-content');
+    const group = document.querySelector('.marquee-group');
+
+    // Si no encuentra los elementos, no hace nada
+    if (!content || !group) return;
+
+    // 1. Mide el ancho necesario
+    const containerWidth = content.parentElement.offsetWidth;
+    const groupWidth = group.offsetWidth;
+
+    // 2. Calcula cuántas veces repetir el grupo de servicios
+    const copiesNeeded = Math.ceil(containerWidth / groupWidth) + 1;
+
+    // 3. Obtiene el HTML del grupo original y lo repite para crear una tira larga
+    const longGroupHTML = group.innerHTML.repeat(copiesNeeded);
+
+    // 4. Construye los dos grupos finales y los inyecta en el HTML
+    content.innerHTML = `
+      <div class="flex shrink-0 items-center">${longGroupHTML}</div>
+      <div class="flex shrink-0 items-center" aria-hidden="true">${longGroupHTML}</div>
+    `;
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // ... (tu código existente para el menú, hero, etc.) ...
 

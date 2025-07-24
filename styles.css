@@ -48,18 +48,19 @@ body{
 }
 
 
+.marquee-content {
+  animation: marquee-scroll 20s linear infinite;
+}
+
 @keyframes marquee-scroll {
-    0% { 
-      transform: translateX(0%); 
-    }
-    100% { 
-      transform: translateX(-50%); /* Mueve el contenido por el ancho del grupo original */
-    }
+  from {
+    transform: translateX(0);
   }
-  
-  .marquee-content {
-    animation: marquee-scroll 15s linear infinite; /* Ajusta '25s' para cambiar la velocidad */
+  to {
+    /* Mueve el contenido exactamente el ancho de UN grupo (50% del total) */
+    transform: translateX(-50%);
   }
+}
 
 
 /* .servicios_jc{
