@@ -22,7 +22,7 @@
         <!-- Contenedor para centrar el contenido del header -->
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-4xl font-black logo_jc text-white">J.C.</a> <!-- Usando font-black para más peso -->
+            <a href="#" class="text-4xl font-black logo_jc text-white"></a> <!-- Usando font-black para más peso -->
 
             <!-- Navegación de Escritorio (Visible desde 'md' hacia arriba) -->
             <nav class="hidden md:flex space-x-5 lg:space-x-7 items-center">
@@ -168,7 +168,7 @@
 
         <!-- Servicios -->
         
-        <section class="p-8 lg:p-12 grid grid-cols-1 xl:grid-cols-2 gap-12 my-28">
+        <section class="p-8 lg:p-12 grid grid-cols-1 xl:grid-cols-2 gap-12 my-28" id="servicios">
 
             <div class="relative w-full shadow-lg rounded-lg xl:rounded-none xl:shadow-none xl:flex">
                 <img 
@@ -280,7 +280,7 @@
 
        <section class="py-16">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold text-center mb-12">Conoce más sobre Nuestros Proyectos</h1>
+                <h1 class="text-3xl font-bold text-center mb-12  text-slate-800">Conoce más sobre Nuestros Proyectos</h1>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
 
@@ -403,7 +403,7 @@
     
         <section class="py-12">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+                <h2 class="text-3xl  font-bold text-center text-gray-800 mb-8" id="proyectos">
                     Proyectos más recientes
                 </h2>
                 <div id="imageCarousel" class="flex overflow-x-auto whitespace-nowrap pb-4 hide-scrollbar
@@ -522,7 +522,7 @@
                 -->
                 <div class="flex flex-col justify-center mb-12 lg:mb-0">
                     <h3 class="text-3xl font-bold text-gray-800 mb-4">Visión</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed font-sans font-thin">
+                    <p class="text-lg text-gray-600 leading-relaxed sans-serif">
                         Nuestra misión es superar las expectativas de nuestros clientes, garantizando transparencia, comunicación fluida y el cumplimiento de los plazos acordados, para seguir construyendo juntos un futuro sólido y confiable.
                     </p>
                     <hr class="mt-6 border-gray-300">
@@ -572,7 +572,7 @@
                 
                 <p id="ctaSubtitle" 
                    class="text-base sm:text-lg md:text-xl max-w-xl lg:max-w-2xl mb-8
-                          opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-500 ">
+                          opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-500 " >
                     Estamos aquí para escucharte. Envíanos un mensaje por WhatsApp y comencemos a darle forma a tu proyecto.
                 </p>
                 
@@ -585,7 +585,7 @@
                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white
                           transition-colors duration-300
                           opacity-0 translate-y-5 transition-all ease-out duration-1000 delay-700">
-                    <span class="jc_1">Ir a WhatsApp</span>
+                    <span class="jc_1" id="contacto">Ir a WhatsApp</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -629,24 +629,16 @@
         <div class="mt-10 flex items-center justify-between border-t border-green-800 pt-8">
             <div class="flex space-x-4">
                 <a href="#" class="text-gray-300 hover:text-white" aria-label="Facebook">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z" />
-                    </svg>
+                    <img src="img/icons8-facebook-logo.svg" class="size-5" alt="">
                 </a>
                 <a href="#" class="text-gray-300 hover:text-white" aria-label="TikTok">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16.6 5.82s.11.02.33.05c.6.09 1.18.26 1.7.51.52.25.97.59 1.34 1.01.37.42.66.92.86 1.48.2.56.31 1.18.33 1.83.02.65.02 1.33.02 2.03s0 1.38-.02 2.03c-.02.65-.13 1.27-.33 1.83-.2.56-.49 1.06-.86 1.48-.37.42-.82.76-1.34 1.01-.52.25-1.1.42-1.7.51-.22.03-.33.05-.33.05s-.02 0-.02.02c-.65.09-1.33.09-2.03.09s-1.38 0-2.03-.09c-.2-.02-.3-.04-.33-.05s-.11-.02-.33-.05c-.6-.09-1.18-.26-1.7-.51-.52-.25-.97-.59-1.34-1.01-.37-.42-.66-.92-.86-1.48-.2-.56-.31-1.18-.33-1.83-.02-.65-.02-1.33-.02-2.03s0-1.38.02-2.03c.02-.65.13-1.27.33-1.83.2-.56.49-1.06.86-1.48.37.42.82.76 1.34 1.01.52.25 1.1.42 1.7.51.22.03.33.05.33.05s.02 0 .02-.02c.65-.09 1.33-.09 2.03-.09s1.38 0 2.03.09zm-4.51 7.42c-.28-.05-.56-.13-.82-.26-.26-.13-.5-.3-.71-.51-.21-.21-.38-.45-.51-.71-.13-.26-.21-.54-.26-.82-.05-.28-.07-.56-.07-.82s.02-.54.07-.82c.05-.28.13-.56.26-.82.13-.26.3-.5.51-.71.21-.21.45-.38.71-.51.26-.13.54-.21.82-.26.28-.05.56-.07.82-.07s.54.02.82.07c.28.05.56.13.82.26.26.13.5.3.71.51.21.21.38.45.51.71.13.26.21.54.26.82.05.28.07.56.07.82s-.02.54-.07.82c-.05.28-.13.56-.26.82-.13.26-.3.5-.51.71-.21-.21-.45-.38-.71-.51-.26-.13-.54-.21-.82-.26-.28-.05-.56-.07-.82-.07s-.54.02-.82.07z"/>
-                    </svg>
+                    <img src="img/icons8-tiktok.svg" class="size-5" alt="">
                 </a>
                 <a href="#" class="text-gray-300 hover:text-white" aria-label="Instagram">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266.058 1.644.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zM12 6.838a5.162 5.162 0 100 10.324 5.162 5.162 0 000-10.324zm0 8.162a3 3 0 110-6 3 3 0 010 6zm6.406-9.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" />
-                    </svg>
+                    <img src="img/instagram_dark.svg" class="size-5" alt="">
                 </a>
                  <a href="#" class="text-gray-300 hover:text-white" aria-label="WhatsApp">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.16 14.2c-.2-.1-.76-.38-1.04-.51s-.41-.19-.58.19-.51.51-.62.62-.23.13-.41.03c-.66-.35-1.25-.72-1.74-1.15-.39-.35-.65-.79-.73-.93s-.08-.21.08-.32c.1-.1.21-.26.32-.38.1-.13.16-.21.23-.35.08-.13.04-.26 0-.35-.04-.1-.58-1.38-.79-1.89s-.41-.43-.58-.43h-.5c-.19 0-.41.08-.62.35s-.76.73-.76 1.79.79 2.08.9 2.23.76 1.18 1.83 1.62c.16.08.3.12.41.15.43.12.83.1.1.1.08-.01.26-.08.41-.15.19-.08.4-.16.51-.23.16-.13.26-.23.35-.38.08-.13.13-.23.21-.35s.05-.16.03-.26z" />
-                    </svg>
+                   <img src="img/icons8-whatsapp-logo.svg" class="size-5" alt="">
                 </a>
             </div>
             <p class="text-sm text-gray-400">@2025 kevin, inc</p>

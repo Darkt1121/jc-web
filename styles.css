@@ -1,36 +1,12 @@
-
-
-
 body{
     background-color: #EFF2F8;
 }
 
 
 
-.menu_btn,
-.title_jc,
-.btn-proyectos,
-.btn-whatsapp{
-    color: #FFE3D9;
-}
-
-
 .title_jc{
     margin-bottom: 9rem;
 }
-
-.logo_jc {
-  /* Si tienes estilos específicos para logo_jc en styles.css, considera integrarlos con Tailwind */
-  /* Por ejemplo, si 'text-primary' es tu color de marca para el logo 
-   /* Ejemplo de color dorado como 'primary', ajústalo */
-}
-.menu_btn {
-  /* Si tienes estilos específicos para menu_btn en styles.css */
-  /* La clase 'text-primary' del HTML ya debería aplicar el color */
-   color: #D4AF37; /* Ejemplo de color dorado como 'primary', ajústalo */
-}
-
-
 
 
 .line_header{
@@ -63,25 +39,15 @@ body{
 }
 
 
-/* .servicios_jc{
-    background-color: #D7CCC8;
-} */
-
-
 .piscina_jc{
     background-color: #D7CCC8;
     
 }
 
 
-
-
 .line_proyectos{
     background-color: #e7bdae;
 }
-
-
-
 
 
 @keyframes blink-animation {
@@ -101,8 +67,6 @@ body{
      ease-in-out: Suaviza el cambio de opacidad.
   */
 }
-
-
 
 
 
