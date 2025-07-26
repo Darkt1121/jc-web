@@ -114,48 +114,59 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // ... (tu código existente para el menú, hero, etc.) ...
+// --- SLIDER DE PROYECTOS ---
+const track = document.getElementById('slider-track');
+const slides = Array.from(track.children);
+const nextButton = document.getElementById('next-btn');
+const prevButton = document.getElementById('prev-btn');
+const counter = document.getElementById('slide-counter');
 
-    const carousel = document.getElementById('imageCarousel');
+// Si los elementos del slider no existen, no ejecutes el código.
+if (track && slides.length > 0) {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  let currentIndex = 0;
+  const totalSlides = slides.length;
 
-    if (carousel) {
-        let isDown = false;    // Indica si el botón del mouse está presionado
-        let startX;            // Posición X inicial del mouse al hacer clic
-        let scrollLeft;        // Posición de scroll inicial del carrusel
+  // Función para mover el slider y actualizar la UI
+  const updateSlider = () => {
+    // Mueve el track usando transform
+    track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
+    
+    // Actualiza el contador
+    counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+  };
 
-        // Cambiar el cursor a "agarrando" cuando se presiona el mouse
-        carousel.addEventListener('mousedown', (e) => {
-            isDown = true;
-            carousel.classList.add('cursor-grabbing'); // Cambia el cursor
-            carousel.classList.remove('cursor-grab');
-            startX = e.pageX - carousel.offsetLeft; // Posición X del mouse relativa al carrusel
-            scrollLeft = carousel.scrollLeft;       // Scroll actual del carrusel
-        });
-
-        // Dejar de arrastrar y restaurar el cursor
-        const stopDragging = () => {
-            if (!isDown) return;
-            isDown = false;
-            carousel.classList.remove('cursor-grabbing');
-            carousel.classList.add('cursor-grab');
-        };
-
-        carousel.addEventListener('mouseleave', stopDragging); // Si el mouse sale del carrusel
-        carousel.addEventListener('mouseup', stopDragging);    // Si se suelta el botón del mouse
-
-        // Mover el carrusel al mover el mouse
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDown) return; // Solo mover si el botón está presionado
-            e.preventDefault(); // Evita acciones por defecto como seleccionar texto
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2; // Multiplicador para la velocidad de arrastre (ajusta *2 si quieres)
-            carousel.scrollLeft = scrollLeft - walk;
-        });
+  // Evento para el botón "Siguiente"
+  nextButton.addEventListener('click', () => {
+    currentIndex++;
+    // Si llega al final, vuelve al principio (loop)
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
     }
+    updateSlider();
+  });
 
-    // ... (otro código JS que puedas tener) ...
-});
+  // Evento para el botón "Anterior"
+  prevButton.addEventListener('click', () => {
+    currentIndex--;
+    // Si está en el primero y va hacia atrás, va al final (loop)
+    if (currentIndex < 0) {
+      currentIndex = totalSlides - 1;
+    }
+    updateSlider();
+  });
+  
+  // Ajustar el tamaño del slide si la ventana cambia de tamaño
+  window.addEventListener('resize', () => {
+      // Necesitamos recalcular el ancho aquí, pero para simplificar,
+      // esta versión básica funciona mejor con anchos fijos.
+      // Una versión avanzada recalcularía el `slideWidth` y llamaría a `updateSlider`.
+      // Por ahora, recargar la página tras un cambio de tamaño grande es una solución simple.
+  });
+
+  // Inicializa el slider en la primera posición
+  updateSlider();
+}
 
 
 

@@ -74,6 +74,10 @@ body{
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 
+#slider-track {
+  transition: transform 0.5s ease-in-out;
+}
+
 
 
 
