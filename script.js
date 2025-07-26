@@ -114,59 +114,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-// --- SLIDER DE PROYECTOS ---
-const track = document.getElementById('slider-track');
-const slides = Array.from(track.children);
-const nextButton = document.getElementById('next-btn');
-const prevButton = document.getElementById('prev-btn');
-const counter = document.getElementById('slide-counter');
-
-// Si los elementos del slider no existen, no ejecutes el código.
-if (track && slides.length > 0) {
-  const slideWidth = slides[0].getBoundingClientRect().width;
-  let currentIndex = 0;
-  const totalSlides = slides.length;
-
-  // Función para mover el slider y actualizar la UI
-  const updateSlider = () => {
-    // Mueve el track usando transform
-    track.style.transform = 'translateX(-' + slideWidth * currentIndex + 'px)';
-    
-    // Actualiza el contador
-    counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-  };
-
-  // Evento para el botón "Siguiente"
-  nextButton.addEventListener('click', () => {
-    currentIndex++;
-    // Si llega al final, vuelve al principio (loop)
-    if (currentIndex >= totalSlides) {
-      currentIndex = 0;
-    }
-    updateSlider();
-  });
-
-  // Evento para el botón "Anterior"
-  prevButton.addEventListener('click', () => {
-    currentIndex--;
-    // Si está en el primero y va hacia atrás, va al final (loop)
-    if (currentIndex < 0) {
-      currentIndex = totalSlides - 1;
-    }
-    updateSlider();
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  const splideElement = document.querySelector('.splide');
   
-  // Ajustar el tamaño del slide si la ventana cambia de tamaño
-  window.addEventListener('resize', () => {
-      // Necesitamos recalcular el ancho aquí, pero para simplificar,
-      // esta versión básica funciona mejor con anchos fijos.
-      // Una versión avanzada recalcularía el `slideWidth` y llamaría a `updateSlider`.
-      // Por ahora, recargar la página tras un cambio de tamaño grande es una solución simple.
-  });
+  if (splideElement) {
+    const splide = new Splide(splideElement, {
+      type       : 'loop', // Crea un carrusel infinito
+      perPage    : 1,      // Muestra 1 slide a la vez
+      perMove    : 1,      // Mueve 1 slide a la vez
+      gap        : '1rem', // Espacio entre slides (16px)
+      pagination : false,  // Oculta los puntos de navegación
+      
+      // Con esta opción logramos el efecto de "ver un poco del siguiente slide"
+      padding: { right: '33rem' }, 
+      
+      // Opciones para que se vea bien en móvil
+      breakpoints: {
+        768: {
+          padding: { right: '0,5rem' }, // Menos padding en pantallas más pequeñas
+        },
+      },
+    });
 
-  // Inicializa el slider en la primera posición
-  updateSlider();
-}
+    // --- Lógica para el contador personalizado ---
+    const counter = document.getElementById('splide-counter');
+    if (counter) {
+      // Al iniciar el carrusel
+      splide.on('mounted', function () {
+        counter.textContent = `${splide.index + 1} / ${splide.length}`;
+      });
+      // Cada vez que se mueve
+      splide.on('move', function () {
+        counter.textContent = `${splide.index + 1} / ${splide.length}`;
+      });
+    }
+
+    splide.mount();
+  }
+});
 
 
 

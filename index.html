@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
@@ -401,75 +402,68 @@
 
       
     
-    <section class="py-16 bg-white overflow-hidden">
+    <section id="proyectos-splide" class="py-16 bg-white">
         <div class="container mx-auto px-4">
 
         <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold text-gray-800">Select Projects</h2>
-        <div class="flex items-center space-x-4">
-            <span id="slide-counter" class="text-sm text-gray-500 font-mono"></span>
-            <button id="prev-btn" aria-label="Previous Slide" class="hover:text-gray-500 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
+        <div class="splide__arrows flex items-center space-x-4">
+            <span id="splide-counter" class="text-sm text-gray-500 font-mono"></span>
+            <button class="splide__arrow--prev hover:text-gray-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
             </button>
-            <button id="next-btn" aria-label="Next Slide" class="hover:text-gray-500 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+            <button class="splide__arrow--next hover:text-gray-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </button>
         </div>
         </div>
 
-        <div id="slider-viewport">
-        <div id="slider-track" class="flex space-x-4">
-            
-            <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="img/trabajo6.jpg" alt="Proyecto Terraza Principal" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Terraza Principal, Santiago / 2024-2025</p>
-            </div>
-            </div>
+        <div class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
 
-            <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg" alt="Proyecto Pisos Exteriores" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Pisos Exteriores, Colina / 2024-2025</p>
-            </div>
-            </div>
+                <li class="splide__slide">
+                    <div class="relative">
+                    <img src="img/trabajo6.jpg" alt="Proyecto 1" class="w-full h-[60vh] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm"><p>Terraza Principal, Santiago / 2024-2025</p></div>
+                    </div>
+                </li>
 
-            <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="img/remodelacion-21.jpg" alt="Proyecto Remodelación Cocina" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Remodelación Cocina, Chicureo / 2023-2024</p>
-            </div>
-            </div>
-            
-            <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg" alt="Proyecto Piso Adoquín" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Piso Adoquín, San Bernardo / 2023-2024</p>
-            </div>
-            </div>
+                <li class="splide__slide">
+                    <div class="relative">
+                    <img src="img/piso 4.jpg" alt="Proyecto 2" class="w-full h-[60vh] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm"><p>Pisos Exteriores, Colina / 2024-2025</p></div>
+                    </div>
+                </li>
 
-            <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="https://images.pexels.com/photos/6782275/pexels-photo-6782275.jpeg" alt="Proyecto Quincho Familiar" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Quincho Familiar, Lo Barnechea / 2022-2023</p>
-            </div>
-            </div>
+                <li class="splide__slide">
+                    <div class="relative">
+                    <img src="img/remodelacion-21.jpg" alt="Proyecto 3" class="w-full h-[60vh] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm"><p>Remodelación Cocina, Chicureo / 2023-2024</p></div>
+                    </div>
+                </li>
 
-             <div class="slider-slide flex-shrink-0 w-[95%] md:w-[70%] relative">
-            <img src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg" alt="Proyecto Pisos Exteriores" class="w-full h-[60vh] object-cover">
-            <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                <p>Pisos Exteriores, Colina / 2024-2025</p>
-            </div>
-            </div>
-            
+                <li class="splide__slide">
+                    <div class="relative">
+                    <img src="https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg" alt="Proyecto 3" class="w-full h-[60vh] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm"><p>Remodelación Cocina, Chicureo / 2023-2024</p></div>
+                    </div>
+                </li>
+
+
+                <li class="splide__slide">
+                    <div class="relative">
+                    <img src="https://images.pexels.com/photos/6510984/pexels-photo-6510984.jpeg" alt="Proyecto 3" class="w-full h-[60vh] object-cover">
+                    <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm"><p>Remodelación Cocina, Chicureo / 2023-2024</p></div>
+                    </div>
+                </li>
+                
+            </ul>
         </div>
         </div>
+        
     </div>
-  </section>
+</section>
 
     
 
@@ -660,7 +654,7 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
